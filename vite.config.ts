@@ -1,5 +1,6 @@
 import tailwindcss from "@tailwindcss/vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import { nitro } from "nitro/vite";
 import viteReact from "@vitejs/plugin-react";
 import { defineConfig, loadEnv } from "vite";
 
@@ -22,6 +23,7 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [
       tanstackStart({ server: { entry: "server" } }),
+      nitro(),
       viteReact(),
       tailwindcss(),
     ],
